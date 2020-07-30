@@ -1,5 +1,79 @@
 <%- include('partials/header') %> 
 
-    <h1>Hello World!</h1>
+<main>
+    <section class="container container-top">
+
+        <div class="row">
+            <div class="col-md-6 descript">
+                <h1 class="descript-h">More than just shorter links</h1>
+                <p class="descript-p">Build your brands recognition and get detailed insights on how your links are performing</p>
+                <a class="btn-get-started" type="button" href="">Get Started</a>
+            </div>
+            <div class="col-md-6">
+                <img class="main-img" src="/img/bg-shorten-desktop.svg" alt="desktop">
+            </div>
+        </div>
+    
+    </section>
+    <section class="container container-middle1">
+        <div class="shorten-box-outer">
+            <div class="shorten-box-inner">
+                <form action="/" method="POST">
+                    <input class="shorten-input" type="text" name="userurl">
+                    <button class="shorten-btn" type="submit" name="urlsubmit">Shorten</button>
+                </form>
+            </div>
+        </div>
+        
+            <% shortUrl.forEach(element=>{ %> 
+                
+                <% if(element.url === "") {%>
+                    <p></p>
+                <% }else{ %>  
+                    <div class="url-box">
+                    <p class="url"><%= element.inputUrl %> </p>
+                    <p class="input-url">https://<%= element.url %> </p>
+                    <button class="copy" type="button">copy</button>
+                </div>
+                <% } %>
+                
+            <% }) %>            
+        
+    </section>
+    <section class="container container-middle2">
+        <div class="advanced">
+            <h2>Advanced Statistics</h2>
+            <p>Track how your links are performing with our advanced statistic board</p>
+        </div>
+        <hr style="height: 0.2em">
+        <div class="stat-block">
+            <div class="stat" id="recog">
+                <div class="img-box">
+                    <img src="./img/icon-brand-recognition.svg" alt=" brand recognition">
+                </div>
+                <h4>Brand Recognition</h4>
+                <p>Boost your brand recognition with each click. Generic link dont mean a thing. Branded link would help instil confident in your content.</p>
+            </div>
+            <div class="stat" id="record">
+                <div class="img-box">
+                    <img src="./img/icon-detailed-records.svg" alt="detailed records">
+                </div>
+                <h4>Detailed Records</h4>
+                <p>Gain insights into whats clicking your links. knowing whenand where people engage in your content helps better. </p>
+            </div>
+            <div class="stat" id="custom">
+                <div class="img-box">
+                    <img src="./img/icon-fully-customizable.svg" alt="fully customizable">
+                </div>
+                <h4>Fully Customizable</h4>
+                <p>Improve brand awareness and content discoverability through customizable links and supercharging audience engagement.</p>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid container-bottom">
+        <h2>Boost your links today</h2>
+        <button>Get Started</button>
+    </section>
+</main>
 
 <%- include('partials/footer') %> 
